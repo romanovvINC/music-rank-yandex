@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+
+.underlineWhite {
+	background: $preWhite;
+	color: $preWhite;
+}
+
+.underlineRed {
+	color: $mainPink;
+}
+
+.underlineBlack {
+	background: $deepBlack;
+	color: $deepBlack;
+}
+
+.underline {
+	display: block;
+	padding: 0;
+	border: 0;
+	border-radius: 50px;
+	width: 50px;
+}

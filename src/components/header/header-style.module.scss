@@ -1,0 +1,55 @@
+@import '../../styles/variables.scss';
+
+.container {
+	margin: 0;
+	padding: 0;
+	top: 0;
+	position: fixed;
+	width: 100vw;
+	height: 70px;
+	background-color: $deepBlack;
+	box-shadow: 0px 3px 6px rgba(0,0,0, 0.3);
+}
+
+.container__box {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 95vw;
+	max-width: $mainWidth;
+	margin: 0 auto 0 auto;
+}
+
+nav {
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.nav__element {
+	cursor: pointer;
+	width: 100px;
+	height: 100%;
+	text-align: center;
+    vertical-align: middle;
+    transition: background 1s ease-out;  
+	p {
+		margin-top: 24px;
+		display: inline-block;
+		font-size: 16px;
+	};
+	&:hover {
+		background: $pinkGradient;
+	}
+}
+
+.nav__text {
+	color: white;
+}
+
+img {
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+}

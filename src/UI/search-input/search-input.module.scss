@@ -1,0 +1,33 @@
+@import '../../styles/variables.scss';
+
+.inputContainer {
+	position: relative;
+}
+
+.searchInput {
+	cursor: text;
+	padding: 0 20px 0 40px;
+	color: white;
+	background-color: #303030;
+	width: 140px;
+	height: 35px;
+	border: 0;
+	border-radius: 20px;
+	&:hover {
+		background-color: #505050;
+	}
+	&:focus {
+		outline:none!important;
+		border: 0;
+	}
+}
+
+.searchInputLabel {
+	position: absolute;
+	left: 10px;
+	top: 9px;
+	img {
+		width: 18px;
+		height: auto;
+	}
+}

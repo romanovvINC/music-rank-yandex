@@ -1,0 +1,94 @@
+$textShadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
+.mainPromo {
+	width: 100vw;
+	height: 400px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	background-size: cover;
+	margin: 0 auto 0 auto;
+}
+
+.mainPromoContainer {
+	h1, p, img, cite {
+		text-shadow: $textShadow;
+	}
+	display: flex;
+	align-items: center;
+	margin: 0 auto 0 auto;
+	width: 800px;
+	height: 230px;
+	img {
+		width: 230px;
+		height: 100%;
+	}
+}
+
+.promoInfo {
+	display: flex;
+	justify-content: left;
+	align-items: top;
+	margin-left: 25px;
+	width: 460px;
+	height: 90%;
+	img {
+		width: 45px;
+		height: 45px;
+	}
+	div {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+	}
+}
+
+.mainInfoBlock {
+	height: 40%;
+	display: flex;
+	flex-direction: column;
+	justify-content: top;
+	margin-left: 10px;
+	h1 {
+		display: inline-block;
+		font-family: 'CircularBold';
+		text-align: left;
+		color: white;
+		font-size: 40px;
+	}
+	div {
+		margin: 0 0 5px 0;
+	}
+		p {
+			display: flex;
+			font-family: 'CircularBook';
+			text-align: left;
+			color: white;
+			font-size: 26px;
+		}
+	
+}
+
+.additionalInfoBlock {
+	display: flex;
+	flex-direction: column;
+	flex-direction: bottom;
+	margin-left: 10px;
+	cite {
+		font-size: 20px;
+		font-style: normal;   
+		hyphens: auto;
+		font-family: 'CircularBookItalic';
+	}
+
+	p {
+		font-size: 24px;
+		margin-top: 10px;
+		
+	}
+
+	* {
+		color: white;
+		text-align: left;
+	}
+}

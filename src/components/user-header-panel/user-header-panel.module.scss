@@ -1,0 +1,36 @@
+@import '../../styles/variables.scss';
+
+.userHeaderPanel {
+	width: 160px;
+	align-items: center;
+	justify-content: right;
+	display: flex;
+	img {
+		margin-left: 15px;
+		width: 35px;
+		height: 35px;
+		border: 2px solid white;
+		border-radius: 20px;
+	}
+}
+
+.userName {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	button {
+		cursor: pointer;
+		p {
+			&:hover {
+				color: $mainPink;
+			}
+			font-size: 16px;
+			text-align: center;
+			color: white;
+		}
+		background: none;
+		color: inherit;
+		border: none;
+		padding: 0;	
+	}
+}
