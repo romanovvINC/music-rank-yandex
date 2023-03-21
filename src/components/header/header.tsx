@@ -12,8 +12,6 @@ interface iHeader {
   }
 
 const Header:FC<iHeader> = ({className}) => {
-	const anus = useAppSelector(state => state.albumSlice);
-	console.log(anus.title);
 	return (
 	<div className={styles.container}>
 	  <div className={styles.container__box}>

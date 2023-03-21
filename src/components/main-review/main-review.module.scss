@@ -1,0 +1,113 @@
+@import '../../styles/variables.scss';
+
+.reviewContainer {
+  box-shadow: $divShadow;
+	width: 100%;
+  margin-bottom: 20px;
+}
+
+.reviewtitle {
+	> img {
+		width: 37px;
+		height: 37px;
+		padding-right: 7px;
+		border-right: 2px solid white;
+	}
+	> h1 {
+		color: white;
+		font-family: 'Helvetica';	
+		margin-left: 12px;
+		font-size: 16px;
+		font-weight: normal;
+		> strong {
+			text-decoration: none;
+			font-weight: normal;
+			font-family: 'CircularBold';
+		}
+	}
+	height: 50px;
+	padding: 0 7px 0 7px;
+	display: flex;
+	background: $pinkGradient;
+	justify-content: left;
+	align-items: center;
+}
+
+.reviewContent {
+	background-color: $blackBackground;
+	padding: 15px;
+	> h1 {
+		font-weight: normal;
+		color: white;
+		font-size: 20px;
+		margin-bottom: 7px;
+	}
+}
+
+.releaseInfo {
+	display: flex;
+	margin-top: 12px;
+	> img {
+		object-fit: fill;
+		width: 150px;
+		height: 150px;
+	}
+	> p {
+		margin-left: 20px;
+		color: white;
+		line-height: 1.5;
+	}
+}
+
+.reviewInfo {
+  height: 50px;
+  padding: 0 15px 0 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: $mediumGrey;
+  align-items: center;
+  p {
+    color: white;
+    vertical-align: middle;
+    line-height: 2.5;
+  }
+}
+
+.reviewUserInfo {
+  display: flex;
+  justify-content: left;
+  > img {
+    width: 32px;
+    height: 32px;
+    object-fit: fill;
+    border-radius: 50%;
+  }
+
+  > p {
+    font-size: 14px;
+    font-family: 'CircularBook';
+    margin-left: 8px;
+  }
+}
+
+.reviewStatsInfo {
+  .viewCount {
+    margin-left: 20px;
+    display: flex;
+    > p {
+      margin-left: 5px;
+    }
+    > img {
+      width: 20px;
+      height: 20px;
+      object-fit: fill;
+      padding-top: 5px;
+    }
+  }
+  display: flex;
+  
+  p {
+    font-family: 'CircularLight';
+    font-size: 12px;
+  }
+}

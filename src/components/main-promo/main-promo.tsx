@@ -24,7 +24,7 @@ const MainPromo:FC<iMainPromo> = ({className}) => {
 					<div>
 						<div className={styles.mainInfoBlock}>
 							<h1>{albumName}</h1>
-							<div><Underline color="White" height={2} width={albumName.length * 21}/></div>
+							<Underline color="White" height={2} width={albumName.length * 21} margin={3}/>
 							<p>{artistName}</p>
 						</div>
 						<div className={styles.additionalInfoBlock}>

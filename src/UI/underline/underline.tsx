@@ -13,7 +13,7 @@ interface iUnderline {
 
 const Underline = forwardRef<HTMLDivElement, iUnderline>(({color, className, width, height, margin}) => {
   return (
-    <hr className={cn(styles.underline, className, {
+    <div><hr className={cn(styles.underline, className, {
       [styles.underlineWhite]: color === 'White',
       [styles.underlineRed]: color === 'Red',
       [styles.underlineBlack]: color === 'Black',
@@ -24,7 +24,7 @@ const Underline = forwardRef<HTMLDivElement, iUnderline>(({color, className, wid
 			height: `${height}px`,
 			margin: `${margin}px 0 ${margin}px 0`
 		}
-	}></hr>       
+	}></hr></div>
   )
 })
 

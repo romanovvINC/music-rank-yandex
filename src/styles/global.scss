@@ -18,6 +18,12 @@
 }
 
 @font-face {
+	font-family: 'CircularLight'; 
+	src: local('Circular-Light'),
+		url('../assets/fonts/EuclidCircularA-Light.woff2'); 
+}
+
+@font-face {
 	font-family: 'CircularBold'; 
 	src: local('CircularBold'),
 		url('../assets/fonts/CircularStd-Bold.woff2'); 
