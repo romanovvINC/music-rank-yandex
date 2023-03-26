@@ -1,13 +1,11 @@
-import { Album, Albums, Artists, Reviews, Songs } from "./main-types";
-
-export type AlbumState = Album;
+import { Album, Artist, Review, Song } from "./main-types";
 
 export type UserState = {
 	authStatus: boolean,
 	avatarUrl: string,
-	artists: Artists,
+	artists: Artist[],
 	userName: string,
-	albums: Albums,
-	songs: Songs,
-	reviews: Reviews
+	albums: Album[],
+	songs: Song[],
+	reviews: Review[]
 }

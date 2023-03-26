@@ -1,5 +1,5 @@
-export type Review = {
-	id: number;
+export interface Review {
+	id: string;
 	title: string;
 	text: string;
 	userId: number;
@@ -8,18 +8,16 @@ export type Review = {
 	numOfViews: number;
 }
 
-export type Reviews = Review[];
-
-export type Album = {
-	id: number,
+export interface Album {
+	id: string,
 	title: string;
 	artist: string;
-	realaseDate: Date | null;
-	cite: string;
+	realaseDate: Date;
+	cite?: string;
+  coverSrc: string;
 	genres: string[];
 	rating: {
 		siteScore: number | null;
-		userScore: number | null;
 		yearPlace: number | null;
 		totalPlace: number | null;
 		numOfScores: number | null;	
@@ -28,28 +26,28 @@ export type Album = {
 		ASide: Song[]
 		BSide?: Song[]
 	};
-	reviews: Reviews;
+	reviews: Review[];
 	numOfReviews: number | null;
 }
 
-export type Albums = Album[];
-
-export type Song = {
-	id: number,
+export interface Song {
+	id: string,
 	title: string,
 	duration: number,
 	rating: number,
 	album?: string
 }
 
-export type Songs = Song[];
-
-export type Artist = {
-	id: number,
+export interface Artist {
+	id: string,
 	name: string,
 	realName: string,
 	members?: Artist[],
 	birthday: Date
 }
 
-export type Artists = Artist[];
+export interface Chart {
+  id: string,
+  title: string,
+  list: (Song | Artist | Album)[]
+}

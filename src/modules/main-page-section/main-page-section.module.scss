@@ -1,12 +1,13 @@
+@import '../../styles/variables.scss';
+
 .mainPageSection {
-	width: 950px;
+	width: $defaultContentWidth;
 	margin: 20px auto 0 auto;
-	background-color: red;
 	display: flex;
-	justify-content: left;
+	justify-content: space-between;
 	align-items: top;
 }
 
 .mainPageReviews {
 	width: 550px;
-}
+} 
