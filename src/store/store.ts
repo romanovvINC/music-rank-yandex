@@ -1,9 +1,9 @@
 import { combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-import albumSlice from './reducers/album-slice';
+import mainPageSlice from './main-page/main-page-slice';
 
 
 export const rootReducer = combineReducers({
-	albumSlice
+	mainPageSlice
 });
 
 export const setupStore = () => {

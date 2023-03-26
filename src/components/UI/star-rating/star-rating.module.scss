@@ -1,0 +1,11 @@
+.starContainer {
+  display: flex;
+  > img {
+    cursor: default;
+    width: 20px;
+    height: 20px;
+  }
+  img:not(:first-child) {
+    margin-left: 5px;
+  }
+}

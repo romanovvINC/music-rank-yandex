@@ -13,7 +13,7 @@ interface iMainPromo {
 const MainPromo:FC<iMainPromo> = ({className}) => {
 	const albumName = 'Scorpion';
 	const artistName = 'Drake';
-	const cite = 'Ya yego rot ebal, ya yego huy sosal';
+	const cite = 'She say, "Do you love me? Only partly I only love my bed and my momma, Im sorry';
 
 	return (
 		<div className={styles.mainPromo} style={{backgroundImage: `url(${mainBackground})`}}>
