@@ -1,6 +1,4 @@
-
-import React from 'react';
-import { FC, InputHTMLAttributes } from 'react';
+import { FC } from 'react';
 import styles from './search-input.module.scss';
 import 'classnames';
 const searchIcon = require('../../assets/img/svg/search-icon__white.png');

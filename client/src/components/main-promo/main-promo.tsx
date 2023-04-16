@@ -2,6 +2,7 @@ import { url } from "inspector";
 import { FC } from "react";
 import Underline from "../../UI/underline/underline";
 import styles from './main-promo.module.scss';
+
 const mainBackground = require('../../assets/img/bg/main-bg.png');
 const promo = require('../../assets/img/mocks/album-drake.jpg');
 const albumIcon = require('../../assets/img/svg/album-icon__white.png');
@@ -14,7 +15,6 @@ const MainPromo:FC<iMainPromo> = ({className}) => {
 	const albumName = 'Scorpion';
 	const artistName = 'Drake';
 	const cite = 'She say, "Do you love me? Only partly I only love my bed and my momma, Im sorry';
-
 	return (
 		<div className={styles.mainPromo} style={{backgroundImage: `url(${mainBackground})`}}>
 			<div className={styles.mainPromoContainer}>
