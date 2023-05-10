@@ -1,11 +1,16 @@
 $blackBackground: rgb(34, 34, 34);
 $deepBlack: rgb(17, 17, 17);
-$defaultContentWidth: 950px;
 $mediumGrey: #303030;
 $greyText: #b0b0b0;
 
+$screenDefaultContentWidth: 950px;
+
+$modalBackground: rgba(0, 0, 0, 0.6);
+
 $pinkGradient: linear-gradient(to bottom right, 	#bf0044, #8f0134);
 $brightPinkGradient: linear-gradient(to bottom right, 	#bf0044, #8f0134);
+$gradientInputGrey: linear-gradient(to bottom, 	#3a3a3a, #303030);
+
 $divShadow: 0 0 6px 2px rgba(0, 0, 0, 0.2);
 $mainPink: #e9004e;
 $brightPink: #FF005C;	

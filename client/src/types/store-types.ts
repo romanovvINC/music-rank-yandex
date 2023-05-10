@@ -1,11 +1,11 @@
-import { Album, Artist, Review, Song } from "./main-types";
+import { IAlbum, IArtist, IReview, ISong } from "./main-types";
 
 export type UserState = {
 	authStatus: boolean,
 	avatarUrl: string,
-	artists: Artist[],
+	artists: IArtist[],
 	userName: string,
-	albums: Album[],
-	songs: Song[],
-	reviews: Review[]
+	albums: IAlbum[],
+	songs: ISong[],
+	reviews: IReview[]
 }

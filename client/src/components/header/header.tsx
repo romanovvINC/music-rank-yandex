@@ -5,6 +5,7 @@ import { useAppSelector } from "../../hooks/redux";
 import { SearchInput } from "../../UI/search-input/search-input";
 import UserHeaderPanel from "../user-header-panel/user-header-panel";
 import styles from './header-style.module.scss';
+import Modal from "../modal/modal-container";
 const logo = require('../../assets/img/svg/main-logo__white.png');
 
 interface iHeader {
@@ -14,6 +15,7 @@ interface iHeader {
 const Header:FC<iHeader> = ({className}) => {
 	return (
 	<div className={styles.container}>
+		<Modal className='saddsad' type='createRelease' />
 	  <div className={styles.container__box}>
 		<div>
 			<img src={logo} alt="logo" className={styles.logo} />

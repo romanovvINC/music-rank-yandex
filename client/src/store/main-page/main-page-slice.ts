@@ -1,12 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { IMainPage } from "./main-page.interface";
+import { asdas } from "./main-page.interface";
 
-const initialState: IMainPage = {
-	promo: null,
-  reviews: [],
-  charts: [],
-  isLoading: false,
-  error: ''
+const initialState: asdas = {
+  asdsd: 'asdas'
 }
 
 export const mainPageSlice = createSlice({

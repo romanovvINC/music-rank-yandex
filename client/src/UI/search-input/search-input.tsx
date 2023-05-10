@@ -10,7 +10,7 @@ interface ISearchInput {
 export const SearchInput:FC<ISearchInput> = () => {
 	return (
 		<div className={styles.inputContainer}>
-			<input className={styles.searchInput} />
+			<input type="search"className={styles.searchInput} />
 			<label className={styles.searchInputLabel}>
 				<img src={searchIcon} />
 			</label>
