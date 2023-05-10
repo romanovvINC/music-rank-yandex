@@ -1,17 +1,15 @@
-import { combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-import mainPageSlice from './main-page/main-page-slice';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import {mainPageSlice} from './main-page/main-page-slice';
+import {artistsSlice} from './artists/artists.slice';
+import { rootReducers } from './root-reducer';
 
 
-export const rootReducer = combineReducers({
-	mainPageSlice
+const store = configureStore({
+	reducer: rootReducers,
+	devTools: true,
 });
 
-export const setupStore = () => {
-	return configureStore({
-		reducer: rootReducer
-	})
-}
+export default store;
 
-export type RootState = ReturnType<typeof rootReducer>
-export type AppStore = ReturnType<typeof setupStore>
-export type AppDispatch = AppStore['dispatch']
+export type TypeRootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch

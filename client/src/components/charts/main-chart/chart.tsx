@@ -1,12 +1,8 @@
-import { stat } from "fs";
-import { url } from "inspector";
-import { FC } from "react";
 import { Album } from "../../../types/main-types";
 import Underline from "../../../UI/underline/underline";
 import ChartPlace from "./chart-place";
 import styles from './main-chart.module.scss';
 const promo = require('../../../assets/img/mocks/to-pimp-a-butterfly.jpg');
-const chartIcon = require('../../../assets/img/svg/stats-icon__white.png');
 
 const chartMock: Album = {
   artist: 'Radiohead',

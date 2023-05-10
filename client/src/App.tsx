@@ -1,16 +1,18 @@
-import React from "react";
+import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./components/header/header";
 import { AppRouteProps } from "./helpers/const";
 import MainPage from "./pages/main-page/main-page";
+import store from "./store/store";
 
 function App() {
   return (
-	<BrowserRouter>
-		<Routes>
-			<Route path={AppRouteProps.Main} element={<MainPage />}/>
-		</Routes>
-	</BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path={AppRouteProps.Main} element={<MainPage />} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 

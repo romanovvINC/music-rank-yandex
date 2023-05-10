@@ -1,0 +1,13 @@
+@import '../../../styles/variables';
+
+.formInput {
+  padding-left: 10px;
+  height: 40px;
+  outline: none;
+  outline-offset: 0;
+  background: $gradientInputGrey;
+  border: 0;
+  font-size: 18px;
+  cursor: text;
+  color: white;
+}

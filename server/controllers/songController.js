@@ -3,11 +3,7 @@ const path = require('path')
 const {Album, Rating, Artist} = require('../models/models')
 const ApiError = require('../error/apiError')
 
-class AlbumController {
-  async getPromoAlbum(req, res) {
-
-  }
-
+class SongController {
   async getAll(req, res) {
     const {id} = req.query;
     let albums;
@@ -18,16 +14,6 @@ class AlbumController {
       albums = await Album.findAll({where: {id: id}})
     }
     return res.json(albums);
-  }
-
-  async getByArtist(req, res) {
-    
-  }
-
-  async postRate(req, res) {
-    const {rate, userId, albumId} = req.query;
-    const rating = await Rating.create({rating: rate, userId: userId, albumId: albumId});
-    return res.json(rating);
   }
 
   async createAlbum(req, res, next) {
@@ -42,23 +28,6 @@ class AlbumController {
       const dataAlbum = await Album.create({title: title, release_date: releaseDate, cover_big: fileNameBig, cover_small: fileNameSmall})
       const artist = await Artist.findOne({where: {id: artistId}})
       const rating = await Rating.findAll({where: {id}})
-      
-
-      const album = {
-        id: dataAlbum.id,
-        title: dataAlbum.title,
-        artistName: artist.name,
-        releaseDate: dataAlbum.release_date,
-        coverBig: dataAlbum.cover_big,
-        coverSmall: dataAlbum.cover_small,
-        genres: [],
-        rating: {
-          siteScore: null,
-          yearPlace: null,
-          totalPlace: null,
-          numOfScores: null
-        }
-      }
 
       return res.json(album)
     } catch (e) {
@@ -67,4 +36,4 @@ class AlbumController {
   }
 }
 
-module.exports = new AlbumController();
+module.exports = new SongController();
