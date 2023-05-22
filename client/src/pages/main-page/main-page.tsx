@@ -6,7 +6,6 @@ const mainBackground = require('../../assets/img/bg/main-bg.png');
 const MainPage = () => {
 	return (
 		<>
-			<Header />
 			<MainPageContent />
 		</>
 	);

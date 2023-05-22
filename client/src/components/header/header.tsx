@@ -1,11 +1,11 @@
 import React from "react";
 import { FC } from "react";
 import { Link as a, Link } from "react-router-dom";
-import { useAppSelector } from "../../hooks/redux";
-import { SearchInput } from "../../UI/search-input/search-input";
+import { SearchInput } from "../UI/search-input/search-input";
 import UserHeaderPanel from "../user-header-panel/user-header-panel";
 import styles from './header-style.module.scss';
 import Modal from "../modal/modal-container";
+import { AppRouteProps } from "../../helpers/const";
 const logo = require('../../assets/img/svg/main-logo__white.png');
 
 interface iHeader {
@@ -15,7 +15,6 @@ interface iHeader {
 const Header:FC<iHeader> = ({className}) => {
 	return (
 	<div className={styles.container}>
-		<Modal className='saddsad' type='createRelease' />
 	  <div className={styles.container__box}>
 		<div>
 			<img src={logo} alt="logo" className={styles.logo} />
@@ -29,6 +28,9 @@ const Header:FC<iHeader> = ({className}) => {
 			</Link>
 			<Link to='/' type='button' className={styles.nav__element}>
 				<p className={styles.nav__text}>Чарты</p>
+			</Link>
+      <Link to={AppRouteProps.Releases} type='button' className={styles.nav__element}>
+				<p className={styles.nav__text}>Релизы</p>
 			</Link>
 		</nav>
 		<SearchInput />

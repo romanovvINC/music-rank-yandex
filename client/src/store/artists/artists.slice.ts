@@ -23,7 +23,6 @@ export const artistsSlice = createSlice({
 			state.isLoading = true;
 		})
 			.addCase(getArtists.fulfilled, (state, action: PayloadAction<AxiosResponse<IArtist[]>>) => {
-        console.log(action.payload.data);
 				state.isLoading = false;
 				state.artists = action.payload.data;
 			})
@@ -33,4 +32,4 @@ export const artistsSlice = createSlice({
 	},
 });
 
-export default artistsSlice.reducer;
+export default artistsSlice;

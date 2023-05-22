@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux';
-import artistsReducer from './artists/artists.slice';
+import artistsSlice from './artists/artists.slice';
+import releasesSlice from './releases/releases.slice';
 export const rootReducers = combineReducers({
-  artists: artistsReducer
+  artists: artistsSlice.reducer,
+  releases: releasesSlice.reducer
 });

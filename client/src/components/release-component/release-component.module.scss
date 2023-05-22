@@ -1,0 +1,221 @@
+@import '../../styles/variables.scss';
+
+.divtext {
+  border-radius: 8px;
+  margin-bottom: 20px;
+  height: 20px;
+  width: 200px;
+  background-color: $loadingGrey;
+}
+.divMediumtext {
+  border-radius: 4px;
+  margin-bottom: 10px;
+  height: 20px;
+  width: 100px;
+  background-color: $loadingGrey;
+}
+
+.divSmallText {
+  height: 16px;
+  margin-top: 10px;
+  width: 50px;
+  background-color: $loadingGrey;
+}
+
+.blink {
+  opacity: 1;
+  animation-name: blink;
+	animation-duration: .8s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+.releaseComponentContainer{
+  padding: 16px;
+  margin-top: 16px;
+  display: grid;
+  position: relative;
+  grid-template-columns: auto 7fr 5fr;
+  column-gap: 20px;
+  background: $gradientBackgroundRelease;
+  object-fit: cover;
+  width: 100%;
+  .releaseComponentEditContainer {
+    display: flex;
+    justify-content: right;
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    right: 0;
+  }
+  .releaseComponentEdit {   
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    height: 100%;
+    width: 80px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+    >button {
+      margin: 12px 12px 0 0;
+      padding: 5px;
+      background: transparent;
+      border: none;
+      >img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    
+  }
+
+  >img {
+    width: 150px;
+    height: 150px;
+    cursor: default;
+    background-color: white;
+    object-fit: contain;
+  }
+
+  .releaseComponentSongs {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .imgDivLoading {
+    width: 130px;
+    height: 130px;
+    background-color: $loadingGrey;
+    object-fit: contain;
+  }
+
+  .releaseComponentRatingContainer {
+    >p {
+      margin-top: 10px;
+      color: white;
+      font-size: 12px;
+      >span {
+        font-family: CircularBold;
+        font-size: 16px;
+      }
+    }
+
+    .mainRatingFlex {
+      display: flex;
+      align-items: center;
+      >p {
+        font-family: Helvetica;
+        color: white;
+        font-size: 10px;
+        margin-left: 8px;
+      }
+      &:first-child {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .releaseComponentMainInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 8px;
+    .releaseComponentMainInfoNonGenre {
+      .releaseComponentTitle {
+        font-size: 18px;
+        padding-bottom: 4px;
+        line-height: 24px;
+        border-bottom: 3px solid $mainPink;
+        font-family: 'CircularBold';
+      }
+    
+      .releaseComponentArtist {
+        display: table;
+        margin-top: 6px;
+        font-size: 16px;
+        font-family: 'CircularBook';
+        font-weight: normal;
+        cursor: pointer;
+        border: none;
+        &:hover {
+          color: $brightPink;
+        }
+      }
+      .releaseDateAndSongs {
+        display: flex;
+        width: 100%;
+        height: 24px;
+        align-items: center;
+        margin-top: 4px;
+        >time {
+          font-size: 12px;
+          font-family: 'CircularLight';
+        }
+        .showSongsbutton {
+          margin-left: 16px;
+          margin-top: 2px;
+          padding: 2px 6px 2px 4px;
+          font-size: 13px;
+          cursor: pointer;
+          color: black;
+          border: none;
+          background-color: white;
+          border-radius: 20px;
+          font-family: 'HelveticaBold';
+          &:hover {
+            background-color: $mainPink;
+            color: white;
+          } 
+        }
+      }
+    
+      >* {
+        color: white;
+      }
+    }
+    
+    .releaseGenresCotainer {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      grid-template-columns: repeat(auto-fill, min-content);
+    }
+  } 
+}
+
+.hideSongsButton {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  margin: 10px auto 0;
+  height: 25px;
+  width: 80px;
+  border-radius: 20px;
+  font-family: 'HelveticaBold';
+  color: white;
+  background-color: $mainPink;
+  &:hover {
+    background-color: white;
+    color: $mainPink;
+  }
+}
+
+@keyframes blink {
+	0% {
+		opacity: 100%;
+	}
+
+	50% {
+		opacity: 20%;
+	}
+
+	100% {
+		opacity: 100%;
+	}
+}

@@ -1,15 +1,18 @@
 import { stat } from "fs";
 import { url } from "inspector";
 import { FC } from "react";
-import Underline from "../../../UI/underline/underline";
+import Underline from "../../UI/underline/underline";
 import styles from './chart-place.module.scss';
 const promo = require('../../../assets/img/mocks/to-pimp-a-butterfly.jpg');
 const chartIcon = require('../../../assets/img/svg/stats-icon__white.png');
 
 interface IChartPlace {
   title: string,
-  artist: string,
-  pubDate: Date,
+  artist: {
+    id: string,
+    name: string
+  },
+  pubDate: string,
   coverUrl: string,
   place: number
 }
@@ -31,15 +34,18 @@ const ChartPlace = (album: IChartPlace) => {
       medalColor = "#CCCCCC";
       break;
   }
+  const imgPath = require(`../../../../../server/static/${album.coverUrl}`);
+  console.log(imgPath);
+  
 return (
 		<div className={styles.chartPlace}>
-      <img src={coverUrl}></img>
+      <img src={imgPath}></img>
       <span className={styles.chartPlaceNum} style={{backgroundColor: `${medalColor}`}}><p>{place}</p></span>
       <div className={styles.chartPlaceInfoContainer}>
         <div className={styles.releaseMainInfo}>
           <h1 className={styles.placeReleaseTitle}>{title}</h1>
           <Underline width={160} height={1} color={"White"}/>
-          <p className={styles.placeArtistName}>{artist}</p>
+          <p className={styles.placeArtistName}>{artist.name}</p>
         </div>
         <p className={styles.placeReleaseDate}>4 February 2022</p>
       </div>

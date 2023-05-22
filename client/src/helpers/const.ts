@@ -1,4 +1,5 @@
 export enum AppRouteProps {
 	Main = '/',
-	Album = '/albums/:id'
+	Album = '/albums/:id',
+  Releases = '/releases'
 }

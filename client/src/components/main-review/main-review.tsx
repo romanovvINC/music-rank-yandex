@@ -1,7 +1,7 @@
 import { stat } from "fs";
 import { url } from "inspector";
 import { FC } from "react";
-import Underline from "../../UI/underline/underline";
+import Underline from "../UI/underline/underline";
 import StarComponent from "../UI/star-rating/star-rating";
 import styles from './main-review.module.scss';
 const promo = require('../../assets/img/mocks/to-pimp-a-butterfly.jpg');
