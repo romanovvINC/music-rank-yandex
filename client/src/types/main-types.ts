@@ -11,8 +11,11 @@ export interface IReview {
 export interface IAlbum {
 	id: string,
 	title: string,
-	artist: string,
-	releaseDate: Date,
+	artist: {
+    id: string,
+    name: string
+  },
+	releaseDate: string,
 	cite?: string,
   coverBig: string,
   coverSmall: string,
@@ -23,10 +26,7 @@ export interface IAlbum {
 		totalPlace: number | null,
 		numOfScores: number | null,
 	};
-	songs: {
-		ASide: ISong[],
-		BSide?: ISong[],
-	};
+	songs: IAlbumSong[]
 	reviews: IReview[],
 	numOfReviews: number | null
 }
@@ -44,6 +44,16 @@ export interface ISong {
 		numOfScores: number | null,
 	},
 	albumId?: string
+}
+
+export interface IAlbumSong extends Omit<ISong, 'cover' | 'albumId' | 'realeaseDate'> {
+  side: string
+}
+
+export interface ICreatedSong {
+  id?: string,
+  title: string,
+  duration: number
 }
 
 export interface IArtist {

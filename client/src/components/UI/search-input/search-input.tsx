@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styles from './search-input.module.scss';
 import 'classnames';
-const searchIcon = require('../../assets/img/svg/search-icon__white.png');
+const searchIcon = require('../../../assets/img/svg/search-icon__white.png');
 
 interface ISearchInput { 
 	classname?: string;

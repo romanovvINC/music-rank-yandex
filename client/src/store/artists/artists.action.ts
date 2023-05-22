@@ -8,7 +8,6 @@ export const getArtists = createAsyncThunk<AxiosResponse<IArtist[]>>(
   async (_, thunkApi) => {
     try {
       const response = await artistService.getAll();
-      console.log(response.data);
       return response;
     } catch (error) {
       return thunkApi.rejectWithValue(error);

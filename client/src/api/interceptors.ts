@@ -4,6 +4,7 @@ import { API_URL } from '../constants/server-const';
 
 export const axiosPublic = axios.create({
   baseURL: API_URL,
+  timeout: 4000,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -12,7 +13,7 @@ export const axiosPublic = axios.create({
 export const axiosPrivate = axios.create({
   baseURL: API_URL,
   headers: {
-    'Content-Type': 'application/json',
+    'Content-Type': 'multipart/form-data',
     Authorization: `Bearer ${localStorage.getItem('token')}`,
   },
 });

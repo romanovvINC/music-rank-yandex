@@ -111,7 +111,7 @@ Album.hasOne(ArtistRelease)
 ArtistRelease.belongsTo(Album)
 
 Album.belongsToMany(Song, {through: AlbumSong})
-Song.belongsTo(Album, {through: AlbumSong})
+Song.belongsToMany(Album, {through: AlbumSong})
 
 //Песня
 

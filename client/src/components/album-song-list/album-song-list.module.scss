@@ -1,0 +1,68 @@
+@import '../../styles/variables.scss';
+
+.albumSongList {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 6fr 2.5fr 1.5fr;
+  row-gap: 10px;
+  padding-bottom: 4px;
+
+  >* {
+    color: white;
+    font-size: 14px;
+    font-family: 'CircularBook';
+  }
+
+  .albumSongTotalInfo {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    >p {
+      >span {
+        font-size: 14px;
+      }
+      margin-left: 12px;
+      font-size: 12px;
+      font-family: Helvetica;
+      color: $lightGrey;
+    }
+  }
+
+  .albumSongTableTitle {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    >img {
+      cursor: default;
+      padding-left: 10px;
+      height: 12px;
+      width: auto;
+    }
+    font-family: 'Helvetica';
+    background-color: #303030;  
+  }
+
+  .albumsongPlace {
+    padding-left: 16px;
+  }
+  
+  .albumsongDuration {
+    margin-left: 4px;
+    font-family: 'CircularBold'; 
+  }
+
+  .albumSongRating {
+    margin-left: 4px;
+    width: 45px;
+    border-radius: 20px;
+    >p {
+      padding: 2px 0;
+      color: black;
+      font-size: 14px;
+      font-family: 'CircularBold';
+      text-align: center;
+    } 
+  }
+}
+

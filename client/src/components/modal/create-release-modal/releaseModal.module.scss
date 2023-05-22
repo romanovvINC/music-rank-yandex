@@ -1,40 +1,95 @@
 @import '../../../styles/variables';
 
+$gap: 16px;
+
 .releaseModalContainer {
   padding: 20px;
 }
 
 .releaseModalContent {
   padding: 0;
-  width: $screenDefaultContentWidth;
-  height: 600px;
-
-  .formAddSongContainer {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    margin-bottom: 20px;
-    width: 100%;
-  }
-
-  .addAlbumSongForm {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-  }
-}
-
-.realeaseFormInput {
-  margin-bottom: 20px;
+  width: $screenModalWidth;
 }
 
 .artistDatalist {
-  margin-bottom: 20px;
   height: 100px;
-  width: 600px;
 }
 
 .addAlbumForm {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 20px;
+  grid-template-columns: 200px auto;
+  gap: $gap;
+
+  .realeaseFormInput {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .showSongFormButton {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    width: 150px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    height: 30px;
+    background: $pinkGradient;
+  }
+
+  .addSongButton {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    border-radius: 20px;
+    width: 200px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    >img {
+      margin-left: 8px;
+      width: 20px;
+      height: 20px;
+    }
+    >p {
+      margin-left: 16px;
+      color: white;
+    }
+    height: 30px;
+    background: $gradientInputGrey;
+  }
+
+  >:first-child {
+    height: 200px;
+    width: 200px;
+    grid-row-start: 1;
+    grid-row-end: 5;
+  }
+
+  .formAddSongContainer {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-template-columns: 5fr 2fr auto;
+    row-gap: 10px;
+    column-gap: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    &:first-child {
+      margin-left: 24px;
+    }
+    >p {
+      color: white;
+    }
+  }
+}
+
+.albumSongHr {
+  border: none;
+  padding: 0;
+  height: 0;
+  border-top: 4px solid $mainPink;
+  grid-column-start: 1;
+  grid-column-end: 3;
 }

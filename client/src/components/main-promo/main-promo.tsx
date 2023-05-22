@@ -1,6 +1,6 @@
 import { url } from "inspector";
 import { FC } from "react";
-import Underline from "../../UI/underline/underline";
+import Underline from "../UI/underline/underline";
 import styles from './main-promo.module.scss';
 
 const mainBackground = require('../../assets/img/bg/main-bg.png');
@@ -14,7 +14,7 @@ interface iMainPromo {
 const MainPromo:FC<iMainPromo> = ({className}) => {
 	const albumName = 'Scorpion';
 	const artistName = 'Drake';
-	const cite = 'She say, "Do you love me? Only partly I only love my bed and my momma, Im sorry';
+	const cite = 'Kiki do you love me? Are you riding? Say youll never ever leave from beside me';
 	return (
 		<div className={styles.mainPromo} style={{backgroundImage: `url(${mainBackground})`}}>
 			<div className={styles.mainPromoContainer}>

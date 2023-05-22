@@ -1,0 +1,47 @@
+@import '../../styles/variables.scss';
+
+.releaseContentContainer{
+  width: $screenReleaseWidth;
+	margin: 70px auto 0 auto;
+
+  .releasesContentButtons {
+    width: 100%;
+    margin-top: 85px;
+
+    .addNewRelease {
+      height: 32px;
+      width: 50%;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      border: none;
+      border-radius: 30px;
+      background: $pinkGradient;
+      &:hover {
+        background: white;
+        >p {
+          color: black;
+        }
+      }
+
+      >p {  
+        margin-left: 16px;
+        color: white;
+        text-align: center;
+        font-family: 'HelveticaBold';
+      }
+      .plusIcon {
+        width: 48px;
+        height: 32px;
+        margin-left: -2px;
+        border-radius: 30px;
+        background-color: $mediumGrey;
+        >img {
+          padding-top: 6px;
+          height: 20px;
+          width: 20px;
+        }
+      }
+    }
+  }
+}

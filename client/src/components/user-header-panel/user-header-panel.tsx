@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import Underline from "../../UI/underline/underline";
+import Underline from "../UI/underline/underline";
 import styles from './user-header-panel.module.scss';
 const avatarUrl = require('../../assets/img/svg/user-icon-svg__white.png');
 
