@@ -1,6 +1,6 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import { IReleasesSlice} from "./releases.interface";
-import {createAlbum, deleteAlbum, getAlbums} from "./releases.action";
+import {createAlbum, deleteAlbum, editAlbum, getAlbums} from "./releases.action";
 import {IAlbum} from "../../types/main-types";
 import { AxiosResponse } from "axios";
 import { useActions } from "../../hooks/useActions";
@@ -51,6 +51,17 @@ export const artistsSlice = createSlice({
         state.isModalOpen = false;
 			})
       .addCase(createAlbum.rejected, (state) => {
+				state.isAlbumLoading = false;
+			})
+      .addCase(editAlbum.pending, (state) => {
+				state.isAlbumLoading = true;
+			})
+      .addCase(editAlbum.fulfilled, (state) => {
+				state.isAlbumLoading = false;
+				window.location.reload();
+        state.isModalOpen = false;
+			})
+      .addCase(editAlbum.rejected, (state) => {
 				state.isAlbumLoading = false;
 			})
       .addCase(deleteAlbum.pending, (state) => {

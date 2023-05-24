@@ -2,8 +2,21 @@ export interface IReview {
 	id: string,
 	title: string,
 	text: string,
-	userId: number,
-	releaseDate: Date,
+  artist: {
+    name: string,
+    id: string
+  },
+  album: {
+    title: string,
+    id: string
+  },
+  coverSrc: string,
+	user: {
+    name: string,
+    id: string,
+    avatar: string
+  },
+	releaseDate: string,
 	rating: number,
 	numOfViews: number
 }

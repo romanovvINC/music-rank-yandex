@@ -1,10 +1,10 @@
 import React from "react";
 import { FC } from "react";
-import { Link as a, Link } from "react-router-dom";
+import { Link as a, Link, useLocation } from "react-router-dom";
 import { SearchInput } from "../UI/search-input/search-input";
 import UserHeaderPanel from "../user-header-panel/user-header-panel";
 import styles from './header-style.module.scss';
-import Modal from "../modal/modal-container";
+import cn from 'classnames';
 import { AppRouteProps } from "../../helpers/const";
 const logo = require('../../assets/img/svg/main-logo__white.png');
 
@@ -13,23 +13,35 @@ interface iHeader {
   }
 
 const Header:FC<iHeader> = ({className}) => {
+  const location = useLocation();
 	return (
 	<div className={styles.container}>
 	  <div className={styles.container__box}>
 		<div>
-			<img src={logo} alt="logo" className={styles.logo} />
+      <Link to={AppRouteProps.Main}>
+        <img src={logo} alt="logo" className={styles.logo} />
+      </Link>
 		</div>
 		<nav>
-			<Link to='/' type='button' className={styles.nav__element}>
+			<Link to={AppRouteProps.Main}
+        type='button'
+        className={cn(styles.navElement,
+          {[styles.navElementActive]: location.pathname === AppRouteProps.Main})}>
 				<p className={styles.nav__text}>Главная</p>
 			</Link>
-			<Link to='/' type='button' className={styles.nav__element}>
+			<Link to='/sdaasd' type='button' className={styles.navElement}>
 				<p className={styles.nav__text}>Рецензии</p>
 			</Link>
-			<Link to='/' type='button' className={styles.nav__element}>
+			<Link to='/asdsadsda'
+        type='button'
+        className={cn(styles.navElement,
+          {[styles.navElementActive]: location.pathname === 'aaa'})}>
 				<p className={styles.nav__text}>Чарты</p>
 			</Link>
-      <Link to={AppRouteProps.Releases} type='button' className={styles.nav__element}>
+      <Link to={AppRouteProps.Releases}
+        type='button'
+        className={cn(styles.navElement,
+          {[styles.navElementActive]: location.pathname === AppRouteProps.Releases})}>
 				<p className={styles.nav__text}>Релизы</p>
 			</Link>
 		</nav>

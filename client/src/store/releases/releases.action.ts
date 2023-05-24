@@ -27,6 +27,15 @@ export const createAlbum = createAsyncThunk<AxiosResponse<IAlbum>, FormData>(
   },
 );
 
+export const editAlbum = createAsyncThunk<void, FormData>(
+  'edit album',
+  async (thunkApi) => {
+    try {
+    } catch (error) {
+    }
+  },
+);
+
 export const deleteAlbum = createAsyncThunk<AxiosResponse<IAlbum>, number>(
   'delte album',
   async (id, thunkApi) => {

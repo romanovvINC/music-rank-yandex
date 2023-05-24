@@ -1,9 +1,5 @@
-import { stat } from "fs";
-import { url } from "inspector";
-import { FC } from "react";
 import Underline from "../../UI/underline/underline";
 import styles from './chart-place.module.scss';
-const promo = require('../../../assets/img/mocks/to-pimp-a-butterfly.jpg');
 const chartIcon = require('../../../assets/img/svg/stats-icon__white.png');
 
 interface IChartPlace {
@@ -19,6 +15,7 @@ interface IChartPlace {
 
 const ChartPlace = (album: IChartPlace) => {
   const  {title, artist, pubDate, coverUrl, place } = album;
+  console.log(album);
   let medalColor = ""
   switch (place) {
     case(1):
@@ -34,7 +31,7 @@ const ChartPlace = (album: IChartPlace) => {
       medalColor = "#CCCCCC";
       break;
   }
-  const imgPath = require(`../../../../../server/static/${album.coverUrl}`);
+  const imgPath = require(`../../../../../server/static/${coverUrl}`);
   console.log(imgPath);
   
 return (
