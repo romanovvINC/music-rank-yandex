@@ -22,14 +22,13 @@ interface IEditReleaseModal {
 const EditReleaseModal = ({ className, handleClose, album, type }: IEditReleaseModal) => {
   const artists = useTypedSelector(state => state.artists.artists);
   const addSrc = require('../../../assets/img/svg/add-icon.png');
-  const { getArtists } = useActions();
-  
+
   const [isFormShowed, setIsFormShowed] = useState(false);
-  const { createAlbum } = useActions();
+  const { createAlbum, getArtists, editAlbum } = useActions();
 
   const parseSongs = (album: IAlbum) => {
     let newArr: ICreatedSong[] = [];
-    album.songs.forEach((song) => newArr.push({title: song.title, duration: song.duration}))
+    album.songs.forEach((song) => newArr.push({ title: song.title, duration: song.duration }))
     return newArr;
   }
 
@@ -46,13 +45,11 @@ const EditReleaseModal = ({ className, handleClose, album, type }: IEditReleaseM
     e.preventDefault();
     const artistId = artists.find((artist) => artist.name === artistName)?.id;
     const genre = allGenres.find((genre) => genre.name === genreName);
-    console.log(allGenres);
-    console.log(genreName);
     console.log(dateToString(new Date));
     console.log(artistId, bigFile, genreName, genre, releaseDate, albumName, songs);
     if (album && genreName !== '' && genre && releaseDate && albumName && songs !== [] && type === 'Edit') {
       let newSongs = [];
-      
+
       for (let i = 0; i < album.songs.length; i++) {
         if (album.songs[i].duration === songs[i].duration && album.songs[i].title === songs[i].title) {
           newSongs.push(songs[i]);
@@ -66,12 +63,10 @@ const EditReleaseModal = ({ className, handleClose, album, type }: IEditReleaseM
         }
       }
 
-      console.log(newSongs);
-
       const formData = new FormData();
       if (bigFile) {
         formData.append("coverBig", bigFile),
-        formData.append("coverSmall", bigFile)
+          formData.append("coverSmall", bigFile)
       }
       formData.append("id", `${album.id}`),
       formData.append("artistId", `${artistId}`),
@@ -79,21 +74,20 @@ const EditReleaseModal = ({ className, handleClose, album, type }: IEditReleaseM
       formData.append("releaseDate", formatInputDate(releaseDate)),
       formData.append("side", 'A'),
       formData.append("songs", JSON.stringify(songs)),
-      formData.append("title", albumName),
-      console.log(album.id);
-      return;
+      formData.append("title", albumName)
+      editAlbum(formData);
     }
     if (artistId && bigFile && genreName !== '' && genre && releaseDate && albumName && songs !== []) {
       const formData = new FormData();
       formData.append("artistId", `${artistId}`),
-      formData.append("coverBig", bigFile),
-      formData.append("coverSmall", bigFile),
-      formData.append("genres", JSON.stringify([genre])),
-      formData.append("releaseDate", formatInputDate(releaseDate)),
-      formData.append("side", 'A'),
-      formData.append("songs", JSON.stringify(songs)),
-      formData.append("title", albumName),
-      createAlbum(formData);
+        formData.append("coverBig", bigFile),
+        formData.append("coverSmall", bigFile),
+        formData.append("genres", JSON.stringify([genre])),
+        formData.append("releaseDate", formatInputDate(releaseDate)),
+        formData.append("side", 'A'),
+        formData.append("songs", JSON.stringify(songs)),
+        formData.append("title", albumName),
+        createAlbum(formData);
     }
   }
 
@@ -102,11 +96,11 @@ const EditReleaseModal = ({ className, handleClose, album, type }: IEditReleaseM
       duration: timeInputToSecs(songDuration),
       title: songName
     }
-    setSongs([...songs, newSong]); 
+    setSongs([...songs, newSong]);
   }
 
   async function getGenres() {
-    const {data: genres} = await genreService.getAll();
+    const { data: genres } = await genreService.getAll();
     setAllGenres(genres);
   }
 
@@ -132,35 +126,35 @@ const EditReleaseModal = ({ className, handleClose, album, type }: IEditReleaseM
     var target = event.target;
 
     if (!FileReader) {
-        return;
+      return;
     }
 
     if (!target.files?.length) {
-        return;
+      return;
     }
 
     var fileReader = new FileReader();
-    fileReader.onload = function() {
+    fileReader.onload = function () {
       setFileSrc(fileReader.result);
     }
 
     fileReader.readAsDataURL(target.files[0]);
     setBigFile(target.files[0]);
-}
+  }
 
   return (
     <div className={cn(className, styles.releaseModalContent)}>
       <ModalHeader handleClose={handleClose} title={type === 'Edit' ? 'Редактировать альбом' : 'Добавить альбом'} />
       <div className={styles.releaseModalContainer}>
         <form className={styles.addAlbumForm} onSubmit={(event) => handleAddAlbumSubmit(event)}>
-          <FileInput onChange={(event) => handleLoadFile(event)} imgFile={typeof(fileSrc) === 'string' ? fileSrc : ''} />
+          <FileInput onChange={(event) => handleLoadFile(event)} imgFile={typeof (fileSrc) === 'string' ? fileSrc : ''} />
           <FormInput value={albumName} placeholder="Введите название альбома" onChange={(e) => setAlbumName(e.target.value)} className={styles.realeaseFormInput} />
           <FormInput value={artistName} disabled={type === 'Edit'} list='datalist-artists' onChange={(e) => setArtistName(e.target.value)} className={styles.realeaseFormInput} placeholder="Выберите исполнителя" />
           <datalist id='datalist-artists' className={styles.artistDatalist}>
             {artists.map((artist) => <option value={artist.name}></option>)}
           </datalist>
           <FormInput type="date" value={releaseDate} onChange={(e) => setReleaseDate(e.target.value)} placeholder="Введите дату релиза альбома" className={styles.realeaseFormInput} />
-          <FormInput list='datalist-genres' value={genreName} onChange={(e) => setGenreName(e.target.value)} className={styles.realeaseFormInput} placeholder="Выберите жанр альбома" />
+          <FormInput list='datalist-genres' disabled={type === 'Edit'} value={genreName} onChange={(e) => setGenreName(e.target.value)} className={styles.realeaseFormInput} placeholder="Выберите жанр альбома" />
           <datalist id='datalist-genres' className={styles.artistDatalist}>
             {allGenres.map((genre) => <option value={genre.name}></option>)}
           </datalist>

@@ -169,7 +169,7 @@ class AlbumController {
 
   async editAlbum(req, res, next) {
     try {
-      const {id, title, releaseDate, artistId, songs, genres, side } = req.body
+      const {id, title, releaseDate, artistId, songs, side } = req.body
       const {coverBig, coverSmall} = req.files
 
       let dataAlbum;
@@ -197,13 +197,26 @@ class AlbumController {
       let newSongs = []
 
       for (let i = 0; i < parsedSongs.length; i++) {
-        const newSong = await Song.create({
-          title: parsedSongs[i].title,
-          release_date: dataAlbum.release_date,
-          duration: parsedSongs[i].duration,
-          cover: dataAlbum.cover_big,
-          albumId: dataAlbum.id
-        })
+        if (parsedSongs[i].id) {
+          const newSong = await Song.update({
+            title: parsedSongs[i].title,
+            release_date: dataAlbum.release_date,
+            duration: parsedSongs[i].duration,
+            cover: dataAlbum.cover_big,
+            albumId: dataAlbum.id
+          }, {where: {id: parsedSongs[i].id}})
+          newSongs.push(newSong);
+        } else {
+          const newSong = await Song.update({
+            title: parsedSongs[i].title,
+            release_date: dataAlbum.release_date,
+            duration: parsedSongs[i].duration,
+            cover: dataAlbum.cover_big,
+            albumId: dataAlbum.id
+          })
+          newSongs.push(newSong);
+        }
+
         newSongs.push(newSong);
         await parsedGenres.forEach((genre) => {
           GenreRelease.create({songId: newSong.id, genreId: genre.id})
