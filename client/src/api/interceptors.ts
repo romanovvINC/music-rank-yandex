@@ -4,7 +4,7 @@ import { API_URL } from '../constants/server-const';
 
 export const axiosPublic = axios.create({
   baseURL: API_URL,
-  timeout: 4000,
+  timeout: 8000,
   headers: {
     'Content-Type': 'application/json',
   },
