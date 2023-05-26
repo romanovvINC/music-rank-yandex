@@ -13,17 +13,18 @@
 }
 
 .container__box {
+  padding: 0;
 	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	width: 95vw;
-	max-width: $mainWidth;
+	display: grid;
+  align-items: center;
+	grid-template-columns: 2fr 400px 5fr 2fr;
+	max-width: $screenDefaultContentWidth;
 	margin: 0 auto 0 auto;
 }
 
 nav {
 	height: 100%;
+  width: 400px;
 	display: flex;
 	justify-content: space-between;
 }
@@ -53,12 +54,17 @@ nav {
 	}
 }
 
+.searchInput {
+  margin: 0 auto;
+}
+
 .nav__text {
 	color: white;
 }
 
-img {
-	width: 40px;
-	height: 40px;
-	cursor: pointer;
+.headerLogo {
+  margin-top: 2px;
+  height: 45px;
+  width: auto;
 }
+

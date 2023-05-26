@@ -6,7 +6,7 @@ import UserHeaderPanel from "../user-header-panel/user-header-panel";
 import styles from './header-style.module.scss';
 import cn from 'classnames';
 import { AppRouteProps } from "../../helpers/const";
-const logo = require('../../assets/img/svg/main-logo__white.png');
+const logo = require('../../assets/img/svg/main-logo2-white.png');
 
 interface iHeader {
 	className?: string
@@ -19,7 +19,7 @@ const Header:FC<iHeader> = ({className}) => {
 	  <div className={styles.container__box}>
 		<div>
       <Link to={AppRouteProps.Main}>
-        <img src={logo} alt="logo" className={styles.logo} />
+        <img src={logo} alt="logo" className={styles.headerLogo} />
       </Link>
 		</div>
 		<nav>
@@ -45,7 +45,7 @@ const Header:FC<iHeader> = ({className}) => {
 				<p className={styles.nav__text}>Релизы</p>
 			</Link>
 		</nav>
-		<SearchInput />
+		<SearchInput classname={styles.searchInput}/>
 		<UserHeaderPanel />
 	  </div>
 	</div>
