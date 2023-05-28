@@ -6,7 +6,6 @@ const uuid = require('uuid');
 export const albumService = {
   async getAll() {
     const response = await axiosPrivate.get<IAlbum[]>('/api/album');
-    console.log(response.data);
     return response;
   },
 
