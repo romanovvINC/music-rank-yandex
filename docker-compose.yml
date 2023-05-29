@@ -1,0 +1,20 @@
+version: "4.17.1"
+services:
+    frontend:
+        container_name: client
+        build:
+            context: ./client
+            dockerfile: Dockerfile
+        ports:
+            - "3000:3000"
+        volumes:
+            - ./client:/app
+    backend:
+        container_name: server
+        build:
+            context: ./server
+            dockerfile: Dockerfile
+        ports:
+            - "5000:5000"
+        volumes:
+            - ./server:/app

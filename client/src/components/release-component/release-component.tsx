@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { genreColors } from '../../constants/genres-colors'
+import { API_URL } from '../../constants/server-const'
 import { useTypedSelector } from '../../hooks/redux'
 import { useActions } from '../../hooks/useActions'
 import { IAlbum } from '../../types/main-types'
@@ -33,9 +34,9 @@ const ReleaseComponent = ({ album, type }: IReleaseComponent) => {
   }
 
   try {
-    imgPath = require(`../../../../server/static/${album.coverBig}`)
+    imgPath = `${API_URL}/${album.coverBig}`;
   } catch (e) {
-    imgPath = require(`../../../../server/static/${noAlbumSrc}`)
+    imgPath = `${API_URL}/${noAlbumSrc}`;
   }
   return (
     <div className={styles.releaseComponentContainer}>

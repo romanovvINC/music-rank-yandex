@@ -1,3 +1,4 @@
+import { API_URL } from "../../../constants/server-const";
 import Underline from "../../UI/underline/underline";
 import styles from './chart-place.module.scss';
 const chartIcon = require('../../../assets/img/svg/stats-icon__white.png');
@@ -31,7 +32,7 @@ const ChartPlace = (album: IChartPlace) => {
       medalColor = "#CCCCCC";
       break;
   }
-  const imgPath = require(`../../../../../server/static/${coverUrl}`);
+  const imgPath = `${API_URL}/${coverUrl}`;
   console.log(imgPath);
   
 return (
