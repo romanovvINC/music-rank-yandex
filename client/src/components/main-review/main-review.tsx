@@ -2,7 +2,7 @@ import Underline from "../UI/underline/underline";
 import StarComponent from "../UI/star-rating/star-rating";
 import styles from './main-review.module.scss';
 import { IReview } from "../../types/main-types";
-import { reviewMocks } from "../../helpers/mocks/reviews";
+import { API_URL } from "../../constants/server-const";
 
 const albumIcon = require('../../assets/img/svg/album-icon__white.png');
 const songIcon = require('../../assets/img/svg/note-icon__white.png');
@@ -17,7 +17,7 @@ interface IMainReview {
   }
 
 const MainReview = ({reviewType, review, width}: IMainReview) => {
-  const imgPath = require(`../../../../server/static/${review.coverSrc}`);
+  const imgPath = `${API_URL}/${review.coverSrc}`;
 	let reviewTextEdited = review.text;
 	let reviewTextSize = 12;
   let reviewIcon = '';
